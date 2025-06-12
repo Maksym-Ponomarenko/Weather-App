@@ -6,12 +6,12 @@ export const fetchWeather = createAsyncThunk(
     'weather/fetchWeather',
     async ({city, type}: { city: string, type: 'current' | 'forecast' }) => {
         const location = await axios.get(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=6b9047df9cacdd94f7e7cc7d6da12ed6`
+            `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=6b9047df9cacdd94f7e7cc7d6da12ed6`
         );
         const {lat, lon} = location.data[0];
         const response = await axios.get(
             type==='current'?`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6b9047df9cacdd94f7e7cc7d6da12ed6`
-            :`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=e0e76f10999eeda30a4f5abfa6d3af17`
+            :`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=e0e76f10999eeda30a4f5abfa6d3af17`
         )
         if (response.data.length === 0) {
             throw new Error('Город не найден');
