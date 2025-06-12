@@ -1,0 +1,59 @@
+.weather-card {
+  background: #f2f2f2;
+  border-radius: 16px;
+  padding: 24px;
+  width: clamp(300px, 90vw, 600px);
+
+  margin: 0 16px 16px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: 'Inter', sans-serif;
+
+  &__location {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  &__temp {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 12px;
+    text-transform: capitalize;
+  }
+
+  &__details {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 360px) {
+    padding: 16px;
+
+    &__temp {
+      font-size: 1.5rem;
+    }
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
